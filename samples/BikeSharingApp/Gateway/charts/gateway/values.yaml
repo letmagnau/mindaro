@@ -24,10 +24,9 @@ probes:
 ingress:
   enabled: true
   annotations:
-    kubernetes.io/ingress.class: traefik
   path: /
   hosts:
-  - dev.gateway.<REPLACE_ME_WITH_HOST_SUFFIX>
+  - gateway.app.dev.synbee.it
   tls: []
     # - secretName: chart-example-tls
     #   hosts:
