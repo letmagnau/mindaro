@@ -1,30 +1,34 @@
 {
     "configurations": [
         {
+            "name": "Launch via NPM",
+            "request": "launch",
+            "runtimeArgs": [
+                "run-script",
+                "start"
+            ],
+            "runtimeExecutable": "/home/piero/.nvm/versions/node/v16.13.0/bin/npm",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node",
+            "port": 3000
+        },
+        {
             "type": "node",
             "request": "launch",
             "name": "Launch via NPM with Kubernetes",
-            "runtimeExecutable": "npm",
+            "runtimeExecutable": "/home/piero/.nvm/versions/node/v16.13.0/bin/npm",
             "runtimeArgs": [
                 "run-script",
-                "debug"
+                "start"
             ],
-            "port": 9229,
+            "port": 3000,
             "preLaunchTask": "bridge-to-kubernetes.resource",
             "env": {
                 "GRPC_DNS_RESOLVER": "native"
             }
         },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "Launch via NPM",
-            "runtimeExecutable": "npm",
-            "runtimeArgs": [
-                "run-script",
-                "debug"
-            ],
-            "port": 9229
-        }
+
     ]
 }
